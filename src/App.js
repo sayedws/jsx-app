@@ -1,25 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
 
+import React from "react";
+import { Container, Alert } from "react-bootstrap";
+import ProductCard from "./components/ProductCard";
+import Image from './components/imagee';
+
+const firstName = "Sayed"; 
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <h1>Hello, {firstName ? firstName : "there"}!</h1>
+      {firstName && <Image src="blob:https://www.bmw-motorrad.fr/c91cdde6-a6fd-4b96-a26b-917ce1b936f2" alt={firstName} />}
+      <ProductCard />
+    </Container>
   );
 }
 
 export default App;
+
+
